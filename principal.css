@@ -1,0 +1,295 @@
+/* Aplica plano de fundo ao site todo */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  background-image: url('imagens/fundobar.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  min-height: 100vh;
+}
+
+  .custom-navbar {
+    background-color: #000000d8; /* Altere para a cor desejada */
+    
+  }
+
+  .custom-navbar {
+    background-color: #000 !important;
+  }
+
+  .link-voltar {
+    color: gold;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+  }
+  
+  .link-voltar i {
+    font-size: 1.5rem;
+    display: block;
+  }
+  
+  .link-voltar small {
+    font-size: 0.9rem;
+    display: block;
+  }
+  
+  .link-voltar:hover {
+    color: #ffd700;
+  }
+
+
+  
+
+/* Cor de fundo do botão */
+.custom-toggler {
+  background-color: #000; /* fundo preto */
+  border: 1px solid #FFD700; /* borda dourada opcional */
+  border-radius: 4px;
+}
+
+/* Cor das listras (ícone do hamburguer) */
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23FFD700' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+
+#titulo {
+  color: #000000;
+  text-align: center;
+  margin-top: 60px;
+  font-size: 3rem; /* Tamanho grande e chamativo */
+  text-align: center;
+  background: linear-gradient(45deg, #b8860b, #ffd700, #ffcc00, #f5deb3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  text-shadow: 1px 1px 4px rgba(255, 215, 0, 0.5); /* leve brilho */
+  margin-top: 60px; /* espaçamento superior */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.reflexo {
+  position: relative;
+  font-size: 1.9rem;
+  margin-top: 60px;
+  font-weight: bold;
+  text-align: center;
+  background: linear-gradient(90deg, #FFD700, #FFA500, #FFD700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  overflow: hidden;
+}
+
+.reflexo::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(224, 184, 6, 0.6), transparent);
+  animation: brilhoReflexo 2s infinite;
+}
+
+@keyframes brilhoReflexo {
+  0% {
+    left: -75%;
+  }
+  100% {
+    left: 125%;
+  }
+}
+
+
+#acompanhamentos {
+  color: #000000;
+  margin: 60px auto; /* Centraliza vertical e horizontalmente */
+  font-size: 1.6rem;
+  background: linear-gradient(45deg, #000000, #FFA500, #FFD700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  text-shadow: 1px 1px 4px rgba(255, 215, 0, 0.5);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  width: 100%; /* Garante que a largura do título ocupe 100% da área disponível */
+  white-space: nowrap; /* Impede quebras de linha no texto */
+  overflow: hidden; /* Garante que o texto não saia da área */
+  text-overflow: ellipsis; /* Se o texto for longo demais, ele vai ser cortado com "..." */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  #acompanhamentos {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #acompanhamentos {
+    font-size: 1.1rem;
+  }
+}
+
+
+
+
+  
+  /* Container dos cards - sem cor de fundo */
+  .cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    padding: 20px;
+    /* Removido o background-color aqui */
+  }
+  
+  /* Cada card */
+  .card {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 600px;
+    background: linear-gradient( #caad08, #FFA500, #bea309da); /* Gradiente dourado */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* Imagem no lado esquerdo do card */
+  .card-img-top {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Corpo do card ao lado direito */
+  .card-body {
+    padding: 16px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+  }
+  
+  /* Título */
+  .card-title {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    font-weight: bold;
+  }
+  
+  /* Texto */
+  .card-text {
+    font-size: 0.95rem;
+    color: #000000;
+    margin-bottom: 16px;
+  }
+  
+    /* Remover o sublinhado e a cor azul dos links dentro do card */
+.card-link {
+    text-decoration: none;  /* Remove o sublinhado */
+    color: inherit;         /* Herda a cor do elemento pai (sem cor azul) */
+}
+  
+    /* Garantir que o título h5 tenha a cor normal (não azul) */
+.card-link h5 {
+  color: inherit;  /* Herda a cor do pai, garantindo que o h5 tenha a mesma cor do texto normal */
+}
+
+
+
+
+
+  /* Botão Ver*/
+ /* Aumentando a especificidade */
+.card .btn-primary {
+    background-color: #000000; /* Cor dourada */
+    color: #FFD700;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .card .btn-primary:hover {
+    background-color: #FFCC00; /* Tom de dourado mais escuro no hover */
+  }
+  
+  
+  
+  
+  /* Carrossel */
+  .carousel-inner img {
+    height: 300px;
+    object-fit: cover;
+  }
+  
+  /* Responsivo: em telas menores, os cards se ajustam */
+  @media (max-width: 768px) {
+    .cards-container {
+      justify-content: space-between;
+    }
+  
+    .card {
+      flex-direction: column;
+      width: calc(50% - 8px); /* 2 colunas */
+    }
+  
+    .card-img-top {
+      width: 100%;
+      height: 200px;
+    }
+  
+    .card-body {
+      width: 100%;
+      
+    }
+  }
+
+  .frase-dourada {
+    color: #FFD700;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+    transition: text-shadow 0.3s ease, transform 0.3s ease;
+  }
+  
+  .frase-dourada:hover {
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.8), 0 0 20px rgba(255, 215, 0, 0.6);
+    transform: scale(1.03);
+  }
+  
+  .bloco-contato {
+    margin-top: 1rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .mt-5 {
+    margin-top: 3rem;
+  }
+
+  .mb-espaco {
+    margin-bottom: 2.5rem; /* ou ajuste para 3rem, 4rem conforme achar melhor */
+  }
+  
+  
+  
+
+  
+  
